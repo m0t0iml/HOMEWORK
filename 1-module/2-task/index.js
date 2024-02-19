@@ -12,10 +12,20 @@ function print(text) {
  * @returns {boolean}
  */
 function isValid(name) {
-    for (name == null || )
-
+  if (name == null || name.length < 4 || name.includes(' ')) {
+    return false;
+  }
+  return true;
 }
 
 function sayHello() {
+  let userName = prompt('Введите ваше имя');
 
+  if (isValid(userName)) {
+    print(`Welcome back, ${userName}!`);
+  } else {
+    print('Некорректное имя');
+  }
 }
+
+sayHello();
