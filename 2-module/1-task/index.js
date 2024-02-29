@@ -7,7 +7,7 @@
 let salaries = {
     John: 1000,
     Ann: 1600,
-    Pete: 1300,
+    Pete: Infinity,
     month: 'December',
     currency: 'USD',
     isPayed: false
@@ -16,7 +16,7 @@ let salaries = {
 function sumSalary(obj) {
     let sum = 0;
     for (let key in obj) {
-        if (typeof obj[key] == 'number') {
+        if (typeof obj[key] == 'number' && isFinite(obj[key])) {
             sum += obj[key];
         }
     }
